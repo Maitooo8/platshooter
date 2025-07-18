@@ -85,6 +85,12 @@ x += xspd;
 		{
 			y += _pixelCheck;
 		}
+		//bonk
+		if yspd < 0
+		{
+			jumpHoldTimer = 0;
+		}
+		
 		//velocidad a 0 en caso de colision
 		yspd = 0
 	}
