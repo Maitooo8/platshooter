@@ -1,0 +1,26 @@
+{
+  "FolderOrderSettings":[
+    {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
+    {"name":"Extensions","order":14,"path":"folders/Extensions.yy",},
+    {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
+    {"name":"Notes","order":13,"path":"folders/Notes.yy",},
+    {"name":"Objects","order":9,"path":"folders/Objects.yy",},
+    {"name":"Rooms","order":10,"path":"folders/Rooms.yy",},
+    {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
+    {"name":"Sequences","order":11,"path":"folders/Sequences.yy",},
+    {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
+    {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
+    {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
+    {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
+    {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"oCamara","order":4,"path":"objects/oCamara/oCamara.yy",},
+    {"name":"oCol","order":3,"path":"objects/oCol/oCol.yy",},
+    {"name":"oRampa","order":2,"path":"objects/oRampa/oRampa.yy",},
+    {"name":"oTile","order":1,"path":"objects/oTile/oTile.yy",},
+    {"name":"sCol","order":3,"path":"sprites/sCol/sCol.yy",},
+    {"name":"sRampa","order":2,"path":"sprites/sRampa/sRampa.yy",},
+    {"name":"sTile","order":1,"path":"sprites/sTile/sTile.yy",},
+  ],
+}
