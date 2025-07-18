@@ -34,6 +34,7 @@ x += xspd;
 	if onGround
 	{
 		jumpCount = 0;
+		jumpHoldTimer = 0;
 	}
 	else
 	{
