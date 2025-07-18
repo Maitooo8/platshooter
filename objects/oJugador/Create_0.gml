@@ -8,3 +8,5 @@ yspd = 0;
 grav = 0.5;
 termVel = 7.5;
 jspd = -7.5
+
+test github
