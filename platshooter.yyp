@@ -34,9 +34,7 @@
   "name":"platshooter",
   "resources":[
     {"id":{"name":"oCamara","path":"objects/oCamara/oCamara.yy",},},
-    {"id":{"name":"oCol","path":"objects/oCol/oCol.yy",},},
     {"id":{"name":"oJugador","path":"objects/oJugador/oJugador.yy",},},
-    {"id":{"name":"oRampa","path":"objects/oRampa/oRampa.yy",},},
     {"id":{"name":"oTile","path":"objects/oTile/oTile.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"general_functions","path":"scripts/general_functions/general_functions.yy",},},

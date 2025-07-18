@@ -10,11 +10,13 @@ yspd = 0;
 //salto
 grav = 0.5;
 termVel = 7.5;
-jspd[0] = -5.5;
-jspd[1] = -5.5;
-jumpHoldFrames[0] = 10;
-jumpHoldFrames[1] =2
 jumpMax = 2;
 jumpCount = 0;
 jumpHoldTimer = 0;
 onGround = true;
+
+//valores de salto para cada salto sucesivo
+jumpHoldFrames[0] = 10;
+jumpHoldFrames[1] = 2;
+jspd[0] = -5.5;
+jspd[1] = -5.5;

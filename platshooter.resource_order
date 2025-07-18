@@ -16,8 +16,6 @@
   ],
   "ResourceOrderSettings":[
     {"name":"oCamara","order":4,"path":"objects/oCamara/oCamara.yy",},
-    {"name":"oCol","order":3,"path":"objects/oCol/oCol.yy",},
-    {"name":"oRampa","order":2,"path":"objects/oRampa/oRampa.yy",},
     {"name":"oTile","order":1,"path":"objects/oTile/oTile.yy",},
     {"name":"sCol","order":3,"path":"sprites/sCol/sCol.yy",},
     {"name":"sRampa","order":2,"path":"sprites/sRampa/sRampa.yy",},
