@@ -39,6 +39,7 @@
     {"id":{"name":"oRampa","path":"objects/oRampa/oRampa.yy",},},
     {"id":{"name":"oTile","path":"objects/oTile/oTile.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"general_functions","path":"scripts/general_functions/general_functions.yy",},},
     {"id":{"name":"sCol","path":"sprites/sCol/sCol.yy",},},
     {"id":{"name":"sJugador","path":"sprites/sJugador/sJugador.yy",},},
     {"id":{"name":"sRampa","path":"sprites/sRampa/sRampa.yy",},},

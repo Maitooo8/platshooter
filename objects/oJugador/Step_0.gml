@@ -1,7 +1,5 @@
 //inputs
-rightKey = keyboard_check(vk_right);
-leftKey = keyboard_check(vk_left);
-jumpKeyPressed = keyboard_check_pressed(vk_space);
+getControls();
 
 //movimiento horizontal
 	//dirección
@@ -32,16 +30,51 @@ x += xspd;
 	//gravedad
 	yspd += grav;
 	
-		//cap velocidad de caída
-		if yspd > termVel { yspd = termVel; }
-	
-	//saltar
-	if jumpKeyPressed and place_meeting(x, y + 1, oTile)
+	//resetear variables de salto
+	if onGround
 	{
-		yspd = jspd;
-		
+		jumpCount = 0;
 	}
-	//colisión vertical
+	else
+	{
+		//si estas en el aire, no poder saltar extra
+		if jumpCount == 0
+		{
+			jumpCount = 1;
+		}
+	}
+	//iniciar el salto
+	if jumpKeyBuffered and jumpCount < jumpMax
+	{
+		//reset buffer
+		jumpKeyBuffered = false;
+		jumpKeyBufferTimer = 0;
+		
+		//incrementar numero de saltos hechos
+		jumpCount++;
+		
+		//marcar el jump hold timer
+		jumpHoldTimer = jumpHoldFrames[jumpCount-1]
+	}
+	//saltar basado en el timer/mantener el botón
+	if jumpHoldTimer > 0
+	{
+		//constantemente convertir ysp en velocidad de salto
+		yspd = jspd[jumpCount-1];
+		//bajar el timer
+		jumpHoldTimer--;
+	}
+	//cortar el salto soltando el boton de salto
+	if !jumpKey
+	{
+		jumpHoldTimer = 0;
+	}
+	
+	//colision vertical y movimiento
+	//cap velocidad de caída
+	if yspd > termVel { yspd = termVel; }
+
+	//colision
 	var _subPixel = .5
 	if place_meeting(x, y + yspd, oTile)
 	{
@@ -54,5 +87,15 @@ x += xspd;
 		//velocidad a 0 en caso de colision
 		yspd = 0
 	}
+	//marcar si estamos en el suelo
+	if yspd >= 0 and place_meeting(x, y + 1, oTile)
+	{
+		onGround = true;
+	}
+	else
+	{
+		onGround = false;	
+	}
+	
 	//mover
 	y += yspd;

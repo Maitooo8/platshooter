@@ -1,3 +1,6 @@
+//control setup
+controlsSetup()
+
 //movimiento
 moveDir = 0;
 moveSpd = 5;
@@ -7,6 +10,11 @@ yspd = 0;
 //salto
 grav = 0.5;
 termVel = 7.5;
-jspd = -7.5
-
-test github
+jspd[0] = -5.5;
+jspd[1] = -5.5;
+jumpHoldFrames[0] = 10;
+jumpHoldFrames[1] =2
+jumpMax = 2;
+jumpCount = 0;
+jumpHoldTimer = 0;
+onGround = true;
