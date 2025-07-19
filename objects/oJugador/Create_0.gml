@@ -10,7 +10,7 @@ yspd = 0;
 //salto
 grav = 0.5;
 termVel = 7.5;
-jumpMax = 2;
+jumpMax = 1;
 jumpCount = 0;
 jumpHoldTimer = 0;
 onGround = true;
