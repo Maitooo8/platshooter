@@ -28,18 +28,32 @@ x += xspd;
 
 //movimiento vertical
 	//gravedad
-	yspd += grav;
-	
+
+	if coyoteHangTimer > 0
+	{
+		//bajar el timer
+		coyoteHangTimer --;
+	}
+	else
+	{
+		//aplicar gravedad a
+		yspd += grav;
+		//ya no estamos en el suelo
+		setOnGround(false);
+	}
+
 	//resetear variables de salto
 	if onGround
 	{
 		jumpCount = 0;
 		jumpHoldTimer = 0;
+		coyoteJumpTimer = coyoteJumpFrames;
 	}
 	else
 	{
 		//si estas en el aire, no poder saltar extra
-		if jumpCount == 0
+		coyoteJumpTimer--;
+		if jumpCount == 0 and coyoteJumpTimer <= 0
 		{
 			jumpCount = 1;
 		}
@@ -56,6 +70,8 @@ x += xspd;
 		
 		//marcar el jump hold timer
 		jumpHoldTimer = jumpHoldFrames[jumpCount-1]
+		//decir que ya no estamos en el suelo
+		setOnGround(false);
 	}
 	//saltar basado en el timer/mantener el botón
 	if jumpHoldTimer > 0
@@ -97,12 +113,8 @@ x += xspd;
 	//marcar si estamos en el suelo
 	if yspd >= 0 and place_meeting(x, y + 1, oTile)
 	{
-		onGround = true;
+		setOnGround(true);
 	}
-	else
-	{
-		onGround = false;	
-	}
-	
+
 	//mover
 	y += yspd;
