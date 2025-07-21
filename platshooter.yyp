@@ -36,6 +36,7 @@
     {"id":{"name":"oCamara","path":"objects/oCamara/oCamara.yy",},},
     {"id":{"name":"oJugador","path":"objects/oJugador/oJugador.yy",},},
     {"id":{"name":"oMenuPrincipal","path":"objects/oMenuPrincipal/oMenuPrincipal.yy",},},
+    {"id":{"name":"oSettings","path":"objects/oSettings/oSettings.yy",},},
     {"id":{"name":"oTile","path":"objects/oTile/oTile.yy",},},
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},

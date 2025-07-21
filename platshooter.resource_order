@@ -17,6 +17,7 @@
   "ResourceOrderSettings":[
     {"name":"oCamara","order":4,"path":"objects/oCamara/oCamara.yy",},
     {"name":"oMenuPrincipal","order":5,"path":"objects/oMenuPrincipal/oMenuPrincipal.yy",},
+    {"name":"oSettings","order":6,"path":"objects/oSettings/oSettings.yy",},
     {"name":"oTile","order":1,"path":"objects/oTile/oTile.yy",},
     {"name":"rInit","order":1,"path":"rooms/rInit/rInit.yy",},
     {"name":"sCol","order":3,"path":"sprites/sCol/sCol.yy",},
