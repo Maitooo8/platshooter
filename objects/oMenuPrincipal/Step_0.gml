@@ -9,25 +9,42 @@ if pos >= op_length {pos = 0}
 if pos < 0 {pos = op_length - 1}
 
 //usar las opciones
-if accept_key
-{
-	switch(pos)
-	{
-		//iniciar juego
-		case 0:
-		room_goto_next()
-	
-			break;
-		//opciones
-		case 1:
-	
-			break;
+if accept_key {
 
-		//salir del juego
-		case 2:
-		game_end();
+var _sml = menu_level;
+switch(menu_level) {
+	//menu principal
+	case 0:
+		switch(pos) {
+			//iniciar juego
+			case 0: room_goto_next(); break;
+			//opciones
+			case 1: menu_level = 1; break;
+			//cerrar juego
+			case 2: game_end(); break;
+			}
+		break;
 	
+	//opciones
+	case 1:
+		switch(pos) {
+		//WINDOWS SIZE
+		case 0: 	
+		
 			break;
+		//back	
+		case 1: 
+			menu_level = 0;
+			break;
+		}
 	
 	}
+	//marcar posicion arriba
+	if _sml != menu_level
+	{
+		pos = 0;	
+	}
+	//guardar numero de opciones en el menu actual
+
 }
+	op_length = array_length(option[menu_level]);
