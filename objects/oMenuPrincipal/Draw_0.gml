@@ -1,6 +1,15 @@
 draw_set_font(global.font_main);
 //conseguir medidas de forma dinamica
+var _new_w = 0;
+for (var i = 0; i < op_length; i++)
+{
+	var _op_w = string_width(option[menu_level, i])
+	_new_w = max(_new_w, _op_w)
+}
+width = _new_w + op_border*2;
 height = op_border*2 + sprite_get_height(sFont) + (op_length-1)*op_space;
+
+//centrar menú
 
 //dibujar fondo
 draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0, c_white, 1);
