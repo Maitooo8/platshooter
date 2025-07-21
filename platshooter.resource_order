@@ -16,10 +16,16 @@
   ],
   "ResourceOrderSettings":[
     {"name":"oCamara","order":4,"path":"objects/oCamara/oCamara.yy",},
+    {"name":"oMenuPrincipal","order":5,"path":"objects/oMenuPrincipal/oMenuPrincipal.yy",},
     {"name":"oTile","order":1,"path":"objects/oTile/oTile.yy",},
     {"name":"rInit","order":1,"path":"rooms/rInit/rInit.yy",},
     {"name":"sCol","order":3,"path":"sprites/sCol/sCol.yy",},
+    {"name":"sFont","order":7,"path":"sprites/sFont/sFont.yy",},
+    {"name":"sJugadorCaminar","order":4,"path":"sprites/sJugadorCaminar/sJugadorCaminar.yy",},
+    {"name":"sJugadorIdle","order":5,"path":"sprites/sJugadorIdle/sJugadorIdle.yy",},
+    {"name":"sJugadorSalto","order":6,"path":"sprites/sJugadorSalto/sJugadorSalto.yy",},
     {"name":"sRampa","order":2,"path":"sprites/sRampa/sRampa.yy",},
     {"name":"sTile","order":1,"path":"sprites/sTile/sTile.yy",},
+    {"name":"sUIbox","order":8,"path":"sprites/sUIbox/sUIbox.yy",},
   ],
 }
