@@ -28,9 +28,21 @@ switch(menu_level) {
 	//opciones
 	case 1:
 		switch(pos) {
-		//WINDOWS SIZE
+		//Fullscreen
 		case 0: 	
-		
+		if accept_key
+{
+    if window_get_fullscreen()
+    {
+        window_set_fullscreen(false);
+		option[1,0] = "FULLSCREEN = OFF"
+    }
+    else
+    {
+        window_set_fullscreen(true);
+		option[1,0] = "FULLSCREEN = ON"
+    }
+}
 			break;
 		//back	
 		case 1: 
