@@ -118,27 +118,60 @@ x += xspd;
 
 	//colision
 	var _subPixel = .5
-	if place_meeting(x, y + yspd, oTile)
+	
+	//colision vertical con rampas en el techo
+	if yspd < 0 and place_meeting(x , y + yspd, oTile)
 	{
-		//forzar hacia la pared
-		var _pixelCheck = _subPixel * sign(yspd);
-		while !place_meeting (x, y + _pixelCheck, oTile)
+		//saltar hacia rampa en el techo
+		var _slopeSlide = false;
+		//slide upleft slope
+		if moveDir != 1 and !place_meeting(x - abs(yspd)-1, y + yspd, oTile)
 		{
-			y += _pixelCheck;
+			while place_meeting(x, y + yspd, oTile) { x -= 1 }
+			_slopeSlide = true
 		}
-		//bonk
-		if yspd < 0
+		//deslide uprighty slope
+		if moveDir != -1 and !place_meeting(x + abs(yspd)+1,y + yspd, oTile)
 		{
-			jumpHoldTimer = 0;
+			while place_meeting(x, y + yspd, oTile) { x += 1 }
+			_slopeSlide = true
 		}
-		
-		//velocidad a 0 en caso de colision
-		yspd = 0
+		//normal y collision
+		if !_slopeSlide
+		{
+			//forzar hacia la pared
+			var _pixelCheck = _subPixel * sign(yspd);
+			while !place_meeting (x, y + _pixelCheck, oTile)
+			{
+				y += _pixelCheck;
+			}
+			//bonk
+			if yspd < 0 {jumpHoldTimer = 0 }
+			yspd = 0
+		}
 	}
-	//marcar si estamos en el suelo
-	if yspd >= 0 and place_meeting(x, y + 1, oTile)
-	{
-		setOnGround(true);
+	
+	
+	//downwards y collision
+	if yspd >= 0
+		{
+		if place_meeting(x, y + yspd, oTile)
+		{
+			//forzar hacia la pared
+			var _pixelCheck = _subPixel * sign(yspd);
+			while !place_meeting (x, y + _pixelCheck, oTile)
+			{
+				y += _pixelCheck;
+			}
+
+			//velocidad a 0 en caso de colision
+			yspd = 0
+		}
+		//marcar si estamos en el suelo
+		if place_meeting(x, y + 1, oTile)
+		{
+			setOnGround(true);
+		}
 	}
 
 	//mover
