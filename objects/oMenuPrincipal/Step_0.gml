@@ -1,15 +1,13 @@
 //inputs
-up_key = keyboard_check_pressed(vk_up);
-down_key = keyboard_check_pressed(vk_down);
-accept_key = keyboard_check_pressed(vk_space);
+getControlsMenu()
 
 //navegar en el menu
-pos += down_key - up_key;
+pos += downKey - upKey;
 if pos >= op_length {pos = 0}
 if pos < 0 {pos = op_length - 1}
 
 //usar las opciones
-if accept_key {
+if acceptKey {
 
 var _sml = menu_level;
 switch(menu_level) {
@@ -28,22 +26,24 @@ switch(menu_level) {
 	//opciones
 	case 1:
 		switch(pos) {
+		
 		//Fullscreen
 		case 0: 	
-		if accept_key
-{
-    if window_get_fullscreen()
-    {
-        window_set_fullscreen(false);
-		option[1,0] = "FULLSCREEN = OFF"
-    }
-    else
-    {
-        window_set_fullscreen(true);
-		option[1,0] = "FULLSCREEN = ON"
-    }
-}
-			break;
+		if acceptKey
+		{
+		    if window_get_fullscreen()
+		    {
+		        window_set_fullscreen(false);
+				option[1,0] = "FULLSCREEN = OFF"
+		    }
+		    else
+		    {
+		        window_set_fullscreen(true);
+				option[1,0] = "FULLSCREEN = ON"
+		    }
+		}
+		break;
+		
 		//back	
 		case 1: 
 			menu_level = 0;
@@ -59,4 +59,4 @@ switch(menu_level) {
 	//guardar numero de opciones en el menu actual
 
 }
-	op_length = array_length(option[menu_level]);
+op_length = array_length(option[menu_level]);

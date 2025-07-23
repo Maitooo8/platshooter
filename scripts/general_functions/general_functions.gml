@@ -14,7 +14,7 @@ function getControls()
 		rightKey = clamp(rightKey, 0, 1);
 	leftKey = keyboard_check(vk_left);
 		leftKey = clamp(leftKey, 0, 1);
-
+	
 	//accion
 	jumpKeyPressed = keyboard_check_pressed(vk_space);
 		jumpKeyPressed = clamp(jumpKeyPressed, 0, 1);
@@ -36,4 +36,12 @@ function getControls()
 	{
 		jumpKeyBuffered = 0;
 	}
+}
+function getControlsMenu()
+{
+	//menú
+	downKey = keyboard_check_pressed(vk_down);
+	upKey = keyboard_check_pressed(vk_up);
+	acceptKey = keyboard_check_pressed(vk_space);	
+	
 }

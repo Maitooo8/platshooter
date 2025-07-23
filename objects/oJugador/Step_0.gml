@@ -4,6 +4,9 @@ getControls();
 //movimiento horizontal
 	//dirección
 	moveDir =  rightKey - leftKey;
+	
+	//get my face
+	if moveDir != 0 { face = moveDir; };
 
 	//conseguir xspd
 	xspd = moveDir * moveSpd;
@@ -12,6 +15,14 @@ getControls();
 	var _subPixel = .5;
 	if place_meeting( x + xspd, y, oTile)
 	{
+		//revisar si hay una rampa para subir
+		if !place_meeting(x + xspd, y - abs(xspd)-1, oTile)
+		{
+			
+			
+		}
+		
+		
 		//forzar hacia la pared
 		var _pixelCheck = _subPixel * sign(xspd);
 		while !place_meeting( x + _pixelCheck, y, oTile)
@@ -118,3 +129,14 @@ x += xspd;
 
 	//mover
 	y += yspd;
+	
+//sprites
+//caminando
+if abs(xspd) > 0 { sprite_index = walkSpr };
+//no moverse
+if xspd == 0 { sprite_index = idleSpr };
+//en el aire
+if !onGround { sprite_index = jumpSpr };
+
+	//colision
+	mask_index = maskSpr

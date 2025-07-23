@@ -16,7 +16,15 @@ function setOnGround(_val = true)
 //control setup
 controlsSetup()
 
+//sprites
+maskSpr = sJugadorIdle
+idleSpr = sJugadorIdle
+walkSpr = sJugadorCaminar
+jumpSpr = sJugadorSalto
+
+
 //movimiento
+face = 1;
 moveDir = 0;
 moveSpd = 5;
 xspd = 0;
