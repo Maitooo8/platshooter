@@ -20,15 +20,24 @@ getControls();
 		{
 			while place_meeting(x + xspd, y, oTile) { y-= _subPixel }	
 		}
-		//si no hay rampas, colision normal
+		//siguiente, revisar si no hay rampas en el techo, si no hay, colision normal
 		else
 		{
+			//rampas en el techo
+			if !place_meeting(x + xspd, y + abs(xspd)+1, oTile)
+			{
+				while place_meeting(x + xspd, y, oTile) { y += _subPixel; }
+			}
+			else
+			//colision normal
+			{
 			//forzar hacia la pared
 			var _pixelCheck = _subPixel * sign(xspd);
 			while !place_meeting( x + _pixelCheck, y, oTile){x += _pixelCheck;}
 		
 			//velocidad a 0 en caso de colision
 			xspd = 0;	
+			}
 		}
 	}
 	//bajar rampas

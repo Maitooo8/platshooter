@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRampa1",
-    "path":"sprites/sRampa1/sRampa1.yy",
+    "name":"sRampa2",
+    "path":"sprites/sRampa2/sRampa2.yy",
   },
   "spriteMaskId":null,
   "visible":true,
