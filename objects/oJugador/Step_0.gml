@@ -18,21 +18,26 @@ getControls();
 		//revisar si hay una rampa para subir
 		if !place_meeting(x + xspd, y - abs(xspd)-1, oTile)
 		{
-			
-			
+			while place_meeting(x + xspd, y, oTile) { y-= _subPixel }	
 		}
-		
-		
-		//forzar hacia la pared
-		var _pixelCheck = _subPixel * sign(xspd);
-		while !place_meeting( x + _pixelCheck, y, oTile)
+		//si no hay rampas, colision normal
+		else
 		{
-			x += _pixelCheck;
+			//forzar hacia la pared
+			var _pixelCheck = _subPixel * sign(xspd);
+			while !place_meeting( x + _pixelCheck, y, oTile){x += _pixelCheck;}
+		
+			//velocidad a 0 en caso de colision
+			xspd = 0;	
 		}
-	
-		//velocidad a 0 en caso de colision
-		xspd = 0;	
 	}
+	//bajar rampas
+	if yspd >= 0 and !place_meeting(x + xspd, y + 1, oTile) and place_meeting (x + xspd, y + abs(xspd)+1, oTile)
+	{
+		while !place_meeting(x + xspd, y + _subPixel, oTile) { y += _subPixel }	
+	}
+
+
 
 //mover
 x += xspd;
@@ -130,13 +135,18 @@ x += xspd;
 	//mover
 	y += yspd;
 	
+
+
+
+
 //sprites
 //caminando
 if abs(xspd) > 0 { sprite_index = walkSpr };
 //no moverse
 if xspd == 0 { sprite_index = idleSpr };
 //en el aire
-if !onGround { sprite_index = jumpSpr };
-
+if !onGround {sprite_index = jumpSpr}
+//cayendo
+if !onGround && yspd < 0 {sprite_index = fallSpr;}; 
 	//colision
 	mask_index = maskSpr

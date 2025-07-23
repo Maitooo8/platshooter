@@ -21,6 +21,7 @@ maskSpr = sJugadorIdle
 idleSpr = sJugadorIdle
 walkSpr = sJugadorCaminar
 jumpSpr = sJugadorSalto
+fallSpr = sJugadorCaida
 
 
 //movimiento
