@@ -28,6 +28,7 @@
     {"name":"sFont","order":7,"path":"sprites/sFont/sFont.yy",},
     {"name":"sJugadorCaida","order":9,"path":"sprites/sJugadorCaida/sJugadorCaida.yy",},
     {"name":"sJugadorCaminar","order":4,"path":"sprites/sJugadorCaminar/sJugadorCaminar.yy",},
+    {"name":"sJugadorDash","order":15,"path":"sprites/sJugadorDash/sJugadorDash.yy",},
     {"name":"sJugadorIdle","order":5,"path":"sprites/sJugadorIdle/sJugadorIdle.yy",},
     {"name":"sJugadorSalto","order":6,"path":"sprites/sJugadorSalto/sJugadorSalto.yy",},
     {"name":"sRampa0","order":11,"path":"sprites/sRampa0/sRampa0.yy",},

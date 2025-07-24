@@ -22,14 +22,25 @@ idleSpr = sJugadorIdle
 walkSpr = sJugadorCaminar
 jumpSpr = sJugadorSalto
 fallSpr = sJugadorCaida
+dashSpr = sJugadorDash
 
 
 //movimiento
 face = 1;
 moveDir = 0;
-moveSpd = 5;
+moveSpd = 4;
 xspd = 0;
 yspd = 0;
+
+//dash
+dashing = false
+canDash = false
+dashDistance = 96
+dashTime = 12
+dashDirection = 0
+dashSp = 0
+dashEnergy = 0
+
 
 //salto
 	grav = 0.5;

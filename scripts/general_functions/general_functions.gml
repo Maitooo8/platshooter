@@ -16,11 +16,13 @@ function getControls()
 		leftKey = clamp(leftKey, 0, 1);
 	
 	//accion
-	jumpKeyPressed = keyboard_check_pressed(vk_space);
+	jumpKeyPressed = keyboard_check_pressed(ord("Z"));
 		jumpKeyPressed = clamp(jumpKeyPressed, 0, 1);
 		
-	jumpKey = keyboard_check(vk_space);
+	jumpKey = keyboard_check(ord("Z"));
 		jumpKey = clamp(jumpKey, 0, 1);
+		
+	dashKey = keyboard_check_pressed(ord("X"))
 		
 	//jumpKey buffering
 	if jumpKeyPressed

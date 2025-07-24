@@ -7,7 +7,7 @@
   "option_operagx_game_name":"platshooter",
   "option_operagx_guid":"468ed7b4-b105-4f52-9049-b1eaf787d218",
   "option_operagx_internalShareUrl":"https://gx.games/games/0c68na/platshooter/tracks/de81a02a-ac0d-4d73-88fb-0cb05c137186/",
-  "option_operagx_interpolate_pixels":true,
+  "option_operagx_interpolate_pixels":false,
   "option_operagx_mod_editUrl":"",
   "option_operagx_mod_game_name":"platshooter",
   "option_operagx_mod_guid":"",

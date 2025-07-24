@@ -50,6 +50,7 @@
     {"id":{"name":"sJugador","path":"sprites/sJugador/sJugador.yy",},},
     {"id":{"name":"sJugadorCaida","path":"sprites/sJugadorCaida/sJugadorCaida.yy",},},
     {"id":{"name":"sJugadorCaminar","path":"sprites/sJugadorCaminar/sJugadorCaminar.yy",},},
+    {"id":{"name":"sJugadorDash","path":"sprites/sJugadorDash/sJugadorDash.yy",},},
     {"id":{"name":"sJugadorIdle","path":"sprites/sJugadorIdle/sJugadorIdle.yy",},},
     {"id":{"name":"sJugadorSalto","path":"sprites/sJugadorSalto/sJugadorSalto.yy",},},
     {"id":{"name":"sRampa0","path":"sprites/sRampa0/sRampa0.yy",},},

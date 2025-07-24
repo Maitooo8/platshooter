@@ -1,16 +1,38 @@
 //inputs
 getControls();
 
-//movimiento horizontal
+	//movimiento horizontal
 	//dirección
+	if !dashing
+	{
 	moveDir =  rightKey - leftKey;
+	}
 	
 	//get my face
 	if moveDir != 0 { face = moveDir; };
 
 	//conseguir xspd
 	xspd = moveDir * moveSpd;
-
+	
+	//dash
+	if (canDash) and (dashKey) and dashing = false
+	{
+	dashing = true;
+	canDash = false;
+	dashDirection = point_direction(0,0,face,0);
+	dashSp = dashDistance/dashTime;
+	dashEnergy = dashDistance; 
+	}
+	
+	if (dashing) { xspd = lengthdir_x(dashSp,dashDirection) }
+		//terminar el dash
+	dashEnergy -= dashSp;
+	if (dashEnergy <= 0)
+	{
+		dashing = false
+	}
+	
+	
 	//colision horizontal
 	var _subPixel = .5;
 	if place_meeting( x + xspd, y, oTile)
@@ -50,6 +72,8 @@ getControls();
 
 //mover
 x += xspd;
+
+
 
 //movimiento vertical
 	//gravedad
@@ -111,7 +135,7 @@ x += xspd;
 	{
 		jumpHoldTimer = 0;
 	}
-	
+
 	//colision vertical y movimiento
 	//cap velocidad de caída
 	if yspd > termVel { yspd = termVel; }
@@ -125,15 +149,15 @@ x += xspd;
 		//saltar hacia rampa en el techo
 		var _slopeSlide = false;
 		//slide upleft slope
-		if moveDir != 1 and !place_meeting(x - abs(yspd)-1, y + yspd, oTile)
+		if moveDir == 0 and !place_meeting(x - abs(yspd)-1, y + yspd, oTile)
 		{
-			while place_meeting(x, y + yspd, oTile) { x -= 1 }
+			while place_meeting(x, y + yspd, oTile) { x -= 1}
 			_slopeSlide = true
 		}
-		//deslide uprighty slope
-		if moveDir != -1 and !place_meeting(x + abs(yspd)+1,y + yspd, oTile)
+		//slide uprighty slope
+		if moveDir == 0 and !place_meeting(x + abs(yspd)+1,y + yspd, oTile)
 		{
-			while place_meeting(x, y + yspd, oTile) { x += 1 }
+			while place_meeting(x, y + yspd, oTile) { x += 1}
 			_slopeSlide = true
 		}
 		//normal y collision
@@ -146,8 +170,9 @@ x += xspd;
 				y += _pixelCheck;
 			}
 			//bonk
-			if yspd < 0 {jumpHoldTimer = 0 }
+
 			yspd = 0
+			if yspd < 0 {jumpHoldTimer = 0 }
 		}
 	}
 	
@@ -171,24 +196,32 @@ x += xspd;
 		if place_meeting(x, y + 1, oTile)
 		{
 			setOnGround(true);
+			canDash = true
 		}
 	}
 
 	//mover
-	y += yspd;
+	if (dashing)
+	{
+	 yspd = 0
+	}
+	else
+	y += yspd
 	
-
-
 
 
 //sprites
 //caminando
+
+
 if abs(xspd) > 0 { sprite_index = walkSpr };
 //no moverse
 if xspd == 0 { sprite_index = idleSpr };
 //en el aire
 if !onGround {sprite_index = jumpSpr}
 //cayendo
-if !onGround && yspd < 0 {sprite_index = fallSpr;}; 
+if !onGround && yspd > 0 {sprite_index = fallSpr;}; 
+//dash
+if dashing = true and xspd != 0 { sprite_index = dashSpr }
 	//colision
 	mask_index = maskSpr
