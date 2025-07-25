@@ -16,6 +16,8 @@ function setOnGround(_val = true)
 //control setup
 controlsSetup()
 
+character = 0
+
 //sprites
 maskSpr = sJugadorIdle
 idleSpr = sJugadorIdle
@@ -23,6 +25,8 @@ walkSpr = sJugadorCaminar
 jumpSpr = sJugadorSalto
 fallSpr = sJugadorCaida
 dashSpr = sJugadorDash
+
+
 
 
 //movimiento
@@ -34,6 +38,7 @@ yspd = 0;
 
 //dash
 dashing = false
+dashCD = 10
 canDash = false
 dashDistance = 96
 dashTime = 12

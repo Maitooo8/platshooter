@@ -1,6 +1,6 @@
 function controlsSetup()
 {
-	bufferTime = 5;
+	bufferTime = 3;
 	
 	jumpKeyBuffered = 0;
 	jumpKeyBufferTimer = 0;
@@ -25,9 +25,9 @@ function getControls()
 	dashKey = keyboard_check_pressed(ord("X"))
 		
 	//jumpKey buffering
-	if jumpKeyPressed
+	if jumpKeyPressed 
 	{
-		jumpKeyBufferTimer = bufferTime;		
+		jumpKeyBufferTimer = bufferTime;
 	}
 	if jumpKeyBufferTimer > 0
 	{
@@ -39,6 +39,7 @@ function getControls()
 		jumpKeyBuffered = 0;
 	}
 }
+
 function getControlsMenu()
 {
 	//menú

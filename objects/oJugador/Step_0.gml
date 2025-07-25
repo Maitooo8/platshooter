@@ -2,19 +2,22 @@
 getControls();
 
 	//movimiento horizontal
+	
+	
 	//dirección
 	if !dashing
 	{
 	moveDir =  rightKey - leftKey;
 	}
 	
-	//get my face
+	//a donde estoy mirando
 	if moveDir != 0 { face = moveDir; };
 
 	//conseguir xspd
 	xspd = moveDir * moveSpd;
 	
 	//dash
+	
 	if (canDash) and (dashKey) and dashing = false
 	{
 	dashing = true;
@@ -24,7 +27,11 @@ getControls();
 	dashEnergy = dashDistance; 
 	}
 	
-	if (dashing) { xspd = lengthdir_x(dashSp,dashDirection) }
+	if (dashing) 
+	{
+		xspd = lengthdir_x(dashSp,dashDirection) jumpKeyBuffered = 0
+	}
+	
 		//terminar el dash
 	dashEnergy -= dashSp;
 	if (dashEnergy <= 0)
@@ -108,7 +115,7 @@ x += xspd;
 		}
 	}
 	//iniciar el salto
-	if jumpKeyBuffered and jumpCount < jumpMax
+	if jumpKeyBuffered and jumpCount < jumpMax 
 	{
 		//reset buffer
 		jumpKeyBuffered = false;
@@ -214,14 +221,22 @@ x += xspd;
 //caminando
 
 
-if abs(xspd) > 0 { sprite_index = walkSpr };
-//no moverse
-if xspd == 0 { sprite_index = idleSpr };
-//en el aire
-if !onGround {sprite_index = jumpSpr}
-//cayendo
-if !onGround && yspd > 0 {sprite_index = fallSpr;}; 
-//dash
-if dashing = true and xspd != 0 { sprite_index = dashSpr }
-	//colision
-	mask_index = maskSpr
+if character = 0
+{
+	if abs(xspd) > 0 { sprite_index = walkSpr };
+	//no moverse
+	if xspd == 0 { sprite_index = idleSpr };
+	//en el aire
+	if !onGround {sprite_index = jumpSpr}
+	//cayendo
+	if !onGround && yspd > 0 {sprite_index = fallSpr;}; 
+	//dash
+	if dashing = true { sprite_index = dashSpr }
+		//colision
+		mask_index = maskSpr
+}
+if character = 1
+{
+	
+	
+}
