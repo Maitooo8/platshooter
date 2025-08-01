@@ -7,7 +7,7 @@ op_space = 16
 pos = 0
 
 //menu
-option[0, 0] = "START GAME";
+option[0, 0] = "CHARACTER SELECT";
 option[0, 1] = "OPTIONS";
 option[0, 2] = "QUIT GAME";
 

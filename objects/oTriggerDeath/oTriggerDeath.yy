@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oSpawnPoint",
+  "%Name":"oTriggerDeath",
   "eventList":[],
   "managed":true,
-  "name":"oSpawnPoint",
+  "name":"oTriggerDeath",
   "overriddenProperties":[],
   "parent":{
-    "name":"Logica",
-    "path":"folders/Objects/Logica.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sTriggerDeath",
+    "path":"sprites/sTriggerDeath/sTriggerDeath.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

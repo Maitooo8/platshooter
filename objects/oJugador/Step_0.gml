@@ -1,3 +1,5 @@
+
+
 //inputs
 getControls();
 
@@ -5,7 +7,7 @@ getControls();
 	
 	
 	//dirección
-	if !dashing
+	if !dashing or !sliding
 	{
 	moveDir =  rightKey - leftKey;
 	}
@@ -18,26 +20,53 @@ getControls();
 	
 	//dash
 	
-	if (canDash) and (dashKey) and dashing = false
+	if character = 0
 	{
-	dashing = true;
-	canDash = false;
-	dashDirection = point_direction(0,0,face,0);
-	dashSp = dashDistance/dashTime;
-	dashEnergy = dashDistance; 
+		if (canDash) and (dashKey) and dashing = false
+		{
+		dashing = true;
+		canDash = false;
+		dashDirection = point_direction(0,0,face,0);
+		dashSp = dashDistance/dashTime;
+		dashEnergy = dashDistance; 
+		}
+	
+		if (dashing) 
+		{
+			xspd = lengthdir_x(dashSp,dashDirection) jumpKeyBuffered = 0
+		}
+	
+			//terminar el dash
+		dashEnergy -= dashSp;
+		if (dashEnergy <= 0)
+		{
+			dashing = false
+		}
+	}
+	if character = 1
+	{
+		if (canDash) and (dashKey) and onGround and sliding = false
+		{
+		sliding = true;
+		canDash = false;
+		dashDirection = point_direction(0,0,face,0);
+		dashSp = dashDistance/dashTime;
+		dashEnergy = dashDistance;
+		}
+	
+		if (sliding) 
+		{
+			xspd = lengthdir_x(dashSp,dashDirection) jumpKeyBuffered = 0
+		}
+	
+			//terminar el dash
+		dashEnergy -= dashSp;
+		if (dashEnergy <= 0)
+		{
+			sliding = false
+		}
 	}
 	
-	if (dashing) 
-	{
-		xspd = lengthdir_x(dashSp,dashDirection) jumpKeyBuffered = 0
-	}
-	
-		//terminar el dash
-	dashEnergy -= dashSp;
-	if (dashEnergy <= 0)
-	{
-		dashing = false
-	}
 	
 	
 	//colision horizontal
@@ -259,8 +288,15 @@ if character = 1
 	//cayendo
 	if !onGround && yspd > 0 {sprite_index = fallSpr;}; 
 	//dash
-	if dashing = true { sprite_index = dashSpr }
+	if sliding = true { sprite_index = dashSpr }
 		//colision
 		mask_index = maskSpr
 	
+}
+
+//"Morir" (resetear la sala)
+if place_meeting(x,y,oTriggerDeath)
+{
+global.from_death = true;
+room_restart();
 }

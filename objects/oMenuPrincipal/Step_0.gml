@@ -25,59 +25,63 @@ switch(menu_level) {
 	
 	//opciones
 	case 1:
-		switch(pos) {
-		
-		//Fullscreen
-		case 0: 	
-		if acceptKey
+		switch(pos)
 		{
-		    if window_get_fullscreen()
-		    {
-		        window_set_fullscreen(false);
-				option[1,0] = "FULLSCREEN = OFF"
-		    }
-		    else
-		    {
-		        window_set_fullscreen(true);
-				option[1,0] = "FULLSCREEN = ON"
-		    }
-		}
-		break;
+			//Fullscreen
+			case 0: 	
+			if acceptKey
+				{
+				    if window_get_fullscreen()
+				    {
+				        window_set_fullscreen(false);
+						option[1,0] = "FULLSCREEN = OFF"
+				    }
+				    else
+				    {
+				        window_set_fullscreen(true);
+						option[1,0] = "FULLSCREEN = ON"
+				    }
+				}
+			break;
 		
-		//back	
-		case 1: 
-			menu_level = 0;
+			//back	
+			case 1:	
+			if acceptKey
+				{
+					menu_level = 0;	
+				}
 			break;
 		}
-		//character select
+		break;
+	//character select
 	case 2:
-		switch(pos) {
-		
-		//seleccionar Dash
-		case 0: 	
+	switch(pos)
+	{
+		case 0:
 		if acceptKey
 		{
 			oJugador.character = 0
-			room_goto_next();
+			room_goto_next()
 		}
 		break;
 		
-		//seleccionar Slide
-		case 1: 	
+		case 1:
 		if acceptKey
 		{
 			oJugador.character = 1
-			room_goto_next();
+			room_goto_next()
 		}
 		break;
 		
-		//retroceder
-		case 2: 
-			menu_level = 0;
-			break;
+		case 2:
+		if acceptKey
+		{
+		 menu_level = 0	
 		}
-	
+		break;
 	}
+}
+
 	//marcar posicion arriba
 	if _sml != menu_level
 	{

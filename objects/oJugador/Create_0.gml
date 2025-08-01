@@ -27,9 +27,6 @@ jumpSpr = sDashSalto
 fallSpr = sDashCaida
 dashSpr = sDashDash
 
-
-
-
 //movimiento
 face = 1;
 moveDir = 0;
@@ -39,6 +36,7 @@ yspd = 0;
 
 //dash
 dashing = false
+sliding = false
 dashCD = 10
 canDash = false
 dashDistance = 96
