@@ -48,7 +48,7 @@ dashEnergy = 0
 
 //salto
 	grav = 0.5;
-	termVel = 7.5;
+	termVel = 11;
 	jumpMax = 1;
 	jumpCount = 0;
 	jumpHoldTimer = 0;

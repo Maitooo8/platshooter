@@ -2,12 +2,15 @@
 
 //inputs
 getControls();
+//colision sprite
+mask_index = maskSpr
+
 
 	//movimiento horizontal
 	
 	
 	//dirección
-	if !dashing or !sliding
+	if !dashing and !sliding 
 	{
 	moveDir =  rightKey - leftKey;
 	}
@@ -43,28 +46,39 @@ getControls();
 			dashing = false
 		}
 	}
+	
+	//slide
+	if (slideStartBuffer > 0) slideStartBuffer--;
 	if character = 1
 	{
+		dashDistance = 192
+		dashTime = 24
+		
 		if (canDash) and (dashKey) and onGround and sliding = false
 		{
 		sliding = true;
+		slideStartBuffer = 3;
 		canDash = false;
 		dashDirection = point_direction(0,0,face,0);
 		dashSp = dashDistance/dashTime;
 		dashEnergy = dashDistance;
+		maskSpr = sSlideDash
 		}
-	
 		if (sliding) 
 		{
-			xspd = lengthdir_x(dashSp,dashDirection) jumpKeyBuffered = 0
+			xspd = lengthdir_x(dashSp,dashDirection) jumpKeyBuffered = 0;
+			dashEnergy -= dashSp;
+			if (dashEnergy <= 0 and !place_meeting(x+xspd, y - 22, oTile))
+			{
+				sliding = false;
+				maskSpr = sSlideIdle
+			}
+		
 		}
 	
-			//terminar el dash
-		dashEnergy -= dashSp;
-		if (dashEnergy <= 0)
-		{
-			sliding = false
-		}
+		//terminar el slide
+		//si NO hay colisión un con un techo y en el siguiente frame no chocamos con una pared
+
 	}
 	
 	
@@ -94,6 +108,11 @@ getControls();
 			while !place_meeting( x + _pixelCheck, y, oTile){x += _pixelCheck;}
 		
 			//velocidad a 0 en caso de colision
+			if (slideStartBuffer <= 0)
+			{
+				sliding = false;
+				maskSpr = sSlideIdle
+			}
 			xspd = 0;	
 			}
 		}
@@ -103,8 +122,6 @@ getControls();
 	{
 		while !place_meeting(x + xspd, y + _subPixel, oTile) { y += _subPixel }	
 	}
-
-
 
 //mover
 x += xspd;
@@ -190,7 +207,7 @@ x += xspd;
 			while place_meeting(x, y + yspd, oTile) { x -= 1}
 			_slopeSlide = true
 		}
-		//slide uprighty slope
+		//slide upright slope
 		if moveDir == 0 and !place_meeting(x + abs(yspd)+1,y + yspd, oTile)
 		{
 			while place_meeting(x, y + yspd, oTile) { x += 1}
@@ -205,10 +222,10 @@ x += xspd;
 			{
 				y += _pixelCheck;
 			}
+			
 			//bonk
-
 			yspd = 0
-			if yspd < 0 {jumpHoldTimer = 0 }
+			if yspd < 0 { jumpHoldTimer = 0 }
 		}
 	}
 	
@@ -268,12 +285,11 @@ if character = 0
 	if !onGround && yspd > 0 {sprite_index = fallSpr;}; 
 	//dash
 	if dashing = true { sprite_index = dashSpr }
-		//colision
-		mask_index = maskSpr
+	maskSpr = sDashIdle
+
 }
 if character = 1
 {
-	maskSpr = sSlideIdle
 	idleSpr = sSlideIdle
 	walkSpr = sSlideCaminar
 	jumpSpr = sSlideSalto
@@ -289,9 +305,6 @@ if character = 1
 	if !onGround && yspd > 0 {sprite_index = fallSpr;}; 
 	//dash
 	if sliding = true { sprite_index = dashSpr }
-		//colision
-		mask_index = maskSpr
-	
 }
 
 //"Morir" (resetear la sala)
