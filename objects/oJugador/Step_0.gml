@@ -223,6 +223,13 @@ x += xspd;
 
 if character = 0
 {
+	maskSpr = sDashIdle
+	idleSpr = sDashIdle
+	walkSpr = sDashCaminar
+	jumpSpr = sDashSalto
+	fallSpr = sDashCaida
+	dashSpr = sDashDash
+	
 	if abs(xspd) > 0 { sprite_index = walkSpr };
 	//no moverse
 	if xspd == 0 { sprite_index = idleSpr };
@@ -237,6 +244,23 @@ if character = 0
 }
 if character = 1
 {
+	maskSpr = sSlideIdle
+	idleSpr = sSlideIdle
+	walkSpr = sSlideCaminar
+	jumpSpr = sSlideSalto
+	fallSpr = sSlideCaida
+	dashSpr = sSlideDash
 	
+	if abs(xspd) > 0 { sprite_index = walkSpr };
+	//no moverse
+	if xspd == 0 { sprite_index = idleSpr };
+	//en el aire
+	if !onGround {sprite_index = jumpSpr}
+	//cayendo
+	if !onGround && yspd > 0 {sprite_index = fallSpr;}; 
+	//dash
+	if dashing = true { sprite_index = dashSpr }
+		//colision
+		mask_index = maskSpr
 	
 }

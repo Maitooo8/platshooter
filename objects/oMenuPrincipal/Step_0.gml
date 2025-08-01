@@ -14,8 +14,8 @@ switch(menu_level) {
 	//menu principal
 	case 0:
 		switch(pos) {
-			//iniciar juego
-			case 0: room_goto_next(); break;
+			//ir a seleccionar personaje
+			case 0: menu_level = 2; break;
 			//opciones
 			case 1: menu_level = 1; break;
 			//cerrar juego
@@ -46,6 +46,33 @@ switch(menu_level) {
 		
 		//back	
 		case 1: 
+			menu_level = 0;
+			break;
+		}
+		//character select
+	case 2:
+		switch(pos) {
+		
+		//seleccionar Dash
+		case 0: 	
+		if acceptKey
+		{
+			oJugador.character = 0
+			room_goto_next();
+		}
+		break;
+		
+		//seleccionar Slide
+		case 1: 	
+		if acceptKey
+		{
+			oJugador.character = 1
+			room_goto_next();
+		}
+		break;
+		
+		//retroceder
+		case 2: 
 			menu_level = 0;
 			break;
 		}

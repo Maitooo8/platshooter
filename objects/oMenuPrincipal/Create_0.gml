@@ -15,5 +15,10 @@ option[0, 2] = "QUIT GAME";
 option[1, 0] = "FULLSCREEN = OFF"
 option[1, 1] = "BACK"
 
+//character select
+option[2, 0] = "DASH";
+option[2, 1] = "SLIDE";
+option[2, 2] = "BACK";
+
 op_length = 0;
 menu_level = 0;

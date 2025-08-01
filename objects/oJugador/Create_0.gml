@@ -16,15 +16,16 @@ function setOnGround(_val = true)
 //control setup
 controlsSetup()
 
-character = 0
+
 
 //sprites
-maskSpr = sJugadorIdle
-idleSpr = sJugadorIdle
-walkSpr = sJugadorCaminar
-jumpSpr = sJugadorSalto
-fallSpr = sJugadorCaida
-dashSpr = sJugadorDash
+character = 0
+maskSpr = sDashIdle
+idleSpr = sDashIdle
+walkSpr = sDashCaminar
+jumpSpr = sDashSalto
+fallSpr = sDashCaida
+dashSpr = sDashDash
 
 
 

@@ -11,7 +11,6 @@
     {"name":"inst_4F706116","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_649221D6","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_47A17637","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_21A61402","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_6DBEB2F7","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_379CBBE2","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_79CE9FA4","path":"rooms/Room1/Room1.yy",},
@@ -30,7 +29,6 @@
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v2","%Name":"inst_21A61402","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_21A61402","objectId":{"name":"oJugador","path":"objects/oJugador/oJugador.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":576.0,},
         {"$GMRInstance":"v2","%Name":"inst_55D128E3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_55D128E3","objectId":{"name":"oTile","path":"objects/oTile/oTile.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.0000005,"scaleY":13.0,"x":-32.0,"y":608.0,},
         {"$GMRInstance":"v2","%Name":"inst_549E0AE0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_549E0AE0","objectId":{"name":"oTile","path":"objects/oTile/oTile.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":9.0,"x":-32.0,"y":320.0,},
         {"$GMRInstance":"v2","%Name":"inst_4F706116","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4F706116","objectId":{"name":"oTile","path":"objects/oTile/oTile.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":544.0,},

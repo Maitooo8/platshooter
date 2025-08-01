@@ -1,6 +1,6 @@
 function controlsSetup()
 {
-	bufferTime = 3;
+	bufferTime = 4;
 	
 	jumpKeyBuffered = 0;
 	jumpKeyBufferTimer = 0;
