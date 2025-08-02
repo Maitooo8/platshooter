@@ -4,6 +4,7 @@ function controlsSetup()
 	
 	jumpKeyBuffered = 0;
 	jumpKeyBufferTimer = 0;
+	
 	slideStartBuffer = 0;
 	
 }

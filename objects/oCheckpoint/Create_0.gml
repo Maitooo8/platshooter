@@ -1,2 +1,2 @@
-// Evento Create
+//estado
 active = false;
